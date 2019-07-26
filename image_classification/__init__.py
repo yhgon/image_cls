@@ -6,4 +6,4 @@ from . import mixup
 from . import resnet
 from . import smoothing
 from . import efficientnet
-from . import utilsefficientnet
+from . import utilsEfficientNet
