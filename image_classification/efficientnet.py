@@ -1,9 +1,8 @@
-import re
-import math
-import collections
-from functools import partial
+import torch
+from torch import nn
+from torch.nn import functional as F
 
-from utilsEfficientNet import (
+from image_classification.utilsEfficientNet import (
     relu_fn,
     round_filters,
     round_repeats,
