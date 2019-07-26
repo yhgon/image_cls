@@ -254,8 +254,6 @@ resnet_versions = {
             'num_classes' : 1000,
             },
         'efficientnet-b0':{
-            'net' : EfficientNet,
-            'block' : MBConvBlock,
             'width' : 1.0, 
             'depth' : 1.0,
             'res' : 224, 
@@ -263,8 +261,6 @@ resnet_versions = {
             'num_classes' : 1000,
             },
         'efficientnet-b1':{
-            'net' : EfficientNet,
-            'block' : MBConvBlock,
             'width' : 1.0, 
             'depth' : 1.1,
             'res' : 240, 
@@ -272,8 +268,6 @@ resnet_versions = {
             'num_classes' : 1000,
             },
         'efficientnet-b2':{
-            'net' : EfficientNet,
-            'block' : MBConvBlock,
             'width' : 1.1, 
             'depth' : 1.2,
             'res' : 260, 
@@ -281,8 +275,6 @@ resnet_versions = {
             'num_classes' : 1000,
             },
         'efficientnet-b3':{
-            'net' : EfficientNet,
-            'block' : MBConvBlock,
             'width' : 1.2, 
             'depth' : 1.4,
             'res' : 300, 
@@ -290,8 +282,6 @@ resnet_versions = {
             'num_classes' : 1000,
             },
         'efficientnet-b4':{
-            'net' : EfficientNet,
-            'block' : MBConvBlock,
             'width' : 1.4, 
             'depth' : 1.8,
             'res' : 380, 
@@ -299,8 +289,6 @@ resnet_versions = {
             'num_classes' : 1000,
             },
         'efficientnet-b5':{
-            'net' : EfficientNet,
-            'block' : MBConvBlock,
             'width' : 1.6, 
             'depth' : 2.2,
             'res' : 456, 
@@ -308,8 +296,6 @@ resnet_versions = {
             'num_classes' : 1000,
             },
         'efficientnet-b6':{
-            'net' : EfficientNet,
-            'block' : MBConvBlock,
             'width' : 1.8, 
             'depth' : 2.6,
             'res' : 528, 
@@ -317,8 +303,6 @@ resnet_versions = {
             'num_classes' : 1000,
             },
         'efficientnet-b7':{
-            'net' : EfficientNet,
-            'block' : MBConvBlock,
             'width' : 2.0, 
             'depth' : 3.1,
             'res' : 600, 
