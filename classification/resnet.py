@@ -270,7 +270,7 @@ def build_resnet(version, config, model_state=None):
     
     
     if 'efficient' in version:
-        import EfficientNet
+        import efficientnet as EfficientNet
         model = EfficientNet.from_name(version) 
         return model
 
