@@ -3,7 +3,7 @@ import math
 import collections
 from functools import partial
 
-from utilsefficientnet import (
+from .utilsEfficientNet import (
     relu_fn,
     round_filters,
     round_repeats,
