@@ -253,13 +253,31 @@ resnet_versions = {
             'layers' : [3, 8, 36, 3],
             'num_classes' : 1000,
             },
+        'efficientnet-b0':{},
+        'efficientnet-b1':{},
+        'efficientnet-b2':{},
+        'efficientnet-b3':{},
+        'efficientnet-b4':{},
+        'efficientnet-b5':{},
+        'efficientnet-b6':{},
+        'efficientnet-b7':{}
+
         }
 
 
 def build_resnet(version, config, model_state=None):
+    
+    
+    
+    if 'efficient' in version:
+        import EfficientNet
+        model = EfficientNet.from_name(version) 
+        return model
+
     version = resnet_versions[version]
     config = resnet_configs[config]
-
+    
+    
     builder = ResNetBuilder(version, config)
     print("Version: {}".format(version))
     print("Config: {}".format(config))
