@@ -255,7 +255,7 @@ resnet_versions = {
             },
         'efficientnet-b0':{
             'width' : 1.0, 
-            'depth' : 1.0,
+            'depth' : ,
             'res' : 224, 
             'dropout' : 0.2,
             'num_classes' : 1000,
@@ -308,22 +308,163 @@ resnet_versions = {
             'res' : 600, 
             'dropout' : 0.5,
             'num_classes' : 1000,
+            },
+        'ryunet-b0':{
+            'width' : 1.0, 
+            'depth' : 1.0,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b1':{
+            'width' : 1.1, 
+            'depth' : 1.0,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b2':{
+            'width' : 1.0, 
+            'depth' : 1.1,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b3':{
+            'width' : 1.1, 
+            'depth' : 1.1,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b4':{
+            'width' : 1.2, 
+            'depth' : 1.1,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b5':{
+            'width' : 1.1, 
+            'depth' : 1.2,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b6':{
+            'width' : 1.2, 
+            'depth' : 1.2,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b7':{
+            'width' : 1.3, 
+            'depth' : 1.1,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b8':{
+            'width' : 1.3, 
+            'depth' : 1.2,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b9':{
+            'width' : 1.2, 
+            'depth' : 1.3,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b10':{
+            'width' : 1.1, 
+            'depth' : 1.3,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b11':{
+            'width' : 1.2, 
+            'depth' : 1.3,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b12':{
+            'width' : 1.3, 
+            'depth' : 1.3,
+            'res' : 224, 
+            'dropout' : 0.2,
+            'num_classes' : 1000,
+            },
+        'ryunet-b13':{
+            'width' : 1.4, 
+            'depth' : 1.1,
+            'res' : 224, 
+            'dropout' : 0.3,
+            'num_classes' : 1000,
+            },
+        'ryunet-b14':{
+            'width' : 1.4, 
+            'depth' : 1.2,
+            'res' : 224, 
+            'dropout' : 0.3,
+            'num_classes' : 1000,
+            },
+        'ryunet-b15':{
+            'width' : 1.4, 
+            'depth' : 1.3,
+            'res' : 224, 
+            'dropout' : 0.3,
+            'num_classes' : 1000,
+            },
+        'ryunet-b16':{
+            'width' : 1.4, 
+            'depth' : 1.4,
+            'res' : 224, 
+            'dropout' : 0.3,
+            'num_classes' : 1000,
+            },
+        'ryunet-b17':{
+            'width' : 1.4, 
+            'depth' : 1.4,
+            'res' : 320, 
+            'dropout' : 0.4,
+            'num_classes' : 1000,
+            },
+        'ryunet-b18':{
+            'width' : 1.5, 
+            'depth' : 1.5,
+            'res' : 320, 
+            'dropout' : 0.4,
+            'num_classes' : 1000,
+            },
+        'ryunet-b19':{
+            'width' : 1.6, 
+            'depth' : 1.6,
+            'res' : 320, 
+            'dropout' : 0.4,
+            'num_classes' : 1000,
             }
         }
 
-
-def build_resnet(version, config, model_state=None):
-
-    
+def build_resnet(version, config, model_state=None):    
     
     if 'efficient' in version:
         from image_classification.efficientnet import EfficientNet
         model = EfficientNet.from_name(version) 
         return model
+    
+    if 'ryunet' in version:
+        from image_classification.ryunet import RyuNet
+        model = RyuNet.from_name(version) 
+        return model
 
     version = resnet_versions[version]
-    config = resnet_configs[config]
-    
+    config = resnet_configs[config]    
     
     builder = ResNetBuilder(version, config)
     print("Version: {}".format(version))
@@ -332,6 +473,5 @@ def build_resnet(version, config, model_state=None):
                            version['block'],
                            version['layers'],
                            version['num_classes'])
-
     
     return model
